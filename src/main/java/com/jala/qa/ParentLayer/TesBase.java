@@ -1,6 +1,5 @@
 package com.jala.qa.ParentLayer;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -10,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Test;
 
 public class TesBase {
 	public static Properties prop;
@@ -18,7 +16,7 @@ public class TesBase {
 	
 	 public TesBase() throws IOException{
 		 prop = new Properties();
-		FileInputStream file = new FileInputStream("C:\\Users\\lenovo\\eclipse-workspace\\Selenium_Java_Project_Batch_Nov2025_9PM\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
+		FileInputStream file = new FileInputStream("C:\\Users\\sai\\OneDrive\\Desktop\\project\\Selenium_Java_Project_Batch_Nov2025_9PM\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
 	    prop.load(file);
 	
 	}

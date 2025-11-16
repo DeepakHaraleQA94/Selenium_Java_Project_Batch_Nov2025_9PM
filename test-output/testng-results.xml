@@ -2,30 +2,30 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Home page title matched, TC Passed]]>
+      <![CDATA[Search Employee page title matched, TC Passed]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-11-13T21:41:49 IST" name="Default suite" finished-at="2025-11-13T21:42:00 IST" duration-ms="10462">
+  <suite started-at="2025-11-16T15:42:16 IST" name="Default suite" finished-at="2025-11-16T15:42:41 IST" duration-ms="24742">
     <groups>
     </groups>
-    <test started-at="2025-11-13T21:41:49 IST" name="Default test" finished-at="2025-11-13T21:42:00 IST" duration-ms="10462">
-      <class name="com.jala.qa.TestLayer.LoginTestPage">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.jala.qa.TestLayer.LoginTestPage@4218d6a3]" started-at="2025-11-13T21:41:49 IST" name="setUp" finished-at="2025-11-13T21:41:53 IST" duration-ms="3542" status="PASS">
+    <test started-at="2025-11-16T15:42:16 IST" name="Default test" finished-at="2025-11-16T15:42:41 IST" duration-ms="24742">
+      <class name="com.jala.qa.TestLayer.EmployeeCreateTestPage">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.jala.qa.TestLayer.EmployeeCreateTestPage@2d52216b]" started-at="2025-11-16T15:42:16 IST" name="setUp" finished-at="2025-11-16T15:42:26 IST" duration-ms="10293" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validateLoginPage()[pri:0, instance:com.jala.qa.TestLayer.LoginTestPage@4218d6a3]" started-at="2025-11-13T21:41:53 IST" name="validateLoginPage" finished-at="2025-11-13T21:41:56 IST" duration-ms="3470" status="PASS">
+        <test-method signature="validateEmployeeCreatePage()[pri:0, instance:com.jala.qa.TestLayer.EmployeeCreateTestPage@2d52216b]" started-at="2025-11-16T15:42:26 IST" name="validateEmployeeCreatePage" finished-at="2025-11-16T15:42:38 IST" duration-ms="12099" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Home page title matched, TC Passed]]>
+              <![CDATA[Search Employee page title matched, TC Passed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- validateLoginPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.jala.qa.TestLayer.LoginTestPage@4218d6a3]" started-at="2025-11-13T21:41:56 IST" name="tearDown" finished-at="2025-11-13T21:42:00 IST" duration-ms="3394" status="PASS">
+        </test-method> <!-- validateEmployeeCreatePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.jala.qa.TestLayer.EmployeeCreateTestPage@2d52216b]" started-at="2025-11-16T15:42:38 IST" name="tearDown" finished-at="2025-11-16T15:42:41 IST" duration-ms="2286" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.jala.qa.TestLayer.LoginTestPage -->
+      </class> <!-- com.jala.qa.TestLayer.EmployeeCreateTestPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
