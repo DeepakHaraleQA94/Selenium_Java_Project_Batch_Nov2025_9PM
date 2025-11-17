@@ -17,7 +17,7 @@ public class TesBase {
 	 public TesBase() throws IOException{
 		 prop = new Properties();
 		FileInputStream file = new FileInputStream("C:\\Users\\sai\\OneDrive\\Desktop\\project\\Selenium_Java_Project_Batch_Nov2025_9PM\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
-	    prop.load(file);
+	    prop.load(file);//changed config file location
 	
 	}
 	
