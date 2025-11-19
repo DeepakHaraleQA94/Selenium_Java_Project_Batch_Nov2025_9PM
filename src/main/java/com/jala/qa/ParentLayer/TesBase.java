@@ -33,7 +33,8 @@ public class TesBase {
 		case "firefox": driver =  new FirefoxDriver();
 		break;
 		default:
-			System.out.println("please check your browser name ...!");
+			
+			System.out.println("change the browser, if it is not working");
 			break;
 			
 		}
