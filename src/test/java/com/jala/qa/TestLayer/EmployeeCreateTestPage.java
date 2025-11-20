@@ -6,13 +6,15 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.jala.qa.ParentLayer.TesBase;
+import com.qa.jala.utility.listenr;
 
 import POMLayer.LoginPage;
 import POMLayer.CreateEmployeePage;
-
+@Listeners(listenr.class)
 public class EmployeeCreateTestPage extends TesBase {
 
     LoginPage login;
@@ -60,7 +62,7 @@ public class EmployeeCreateTestPage extends TesBase {
         createEmp.clickSubmit();
         Thread.sleep(3000);
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, "Search Employee", "Search Employee page title not matched, TC failed");
+        Assert.assertEquals(actualTitle, "Search Employee1", "Search Employee page title not matched, TC failed");
         Reporter.log("Search Employee page title matched, TC Passed", true);
 
        
