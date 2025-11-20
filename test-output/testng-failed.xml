@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.jala.qa.TestLayer.LoginTestPage">
+      <class name="com.jala.qa.TestLayer.EmployeeCreateTestPage">
         <methods>
-          <include name="validateLoginPage"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="validateEmployeeCreatePage"/>
         </methods>
-      </class> <!-- com.jala.qa.TestLayer.LoginTestPage -->
+      </class> <!-- com.jala.qa.TestLayer.EmployeeCreateTestPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
