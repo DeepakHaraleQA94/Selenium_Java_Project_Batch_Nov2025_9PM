@@ -54,10 +54,4 @@ public class LoginTestPage extends TesBase{
 		Thread.sleep(3000);
 		driver.close();
 	}
-	
-	
-	
-
-	
-	
 }
