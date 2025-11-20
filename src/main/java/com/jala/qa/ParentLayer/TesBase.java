@@ -42,12 +42,12 @@ public class TesBase {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get(prop.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
 				
 	}
 	
 	public static void Hold() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 }
