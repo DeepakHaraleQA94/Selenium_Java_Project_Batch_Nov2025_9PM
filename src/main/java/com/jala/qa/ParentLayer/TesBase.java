@@ -16,7 +16,7 @@ public class TesBase {
 	
 	 public TesBase() throws IOException{
 		 prop = new Properties();
-		FileInputStream file = new FileInputStream("C:\\Users\\sai\\OneDrive\\Desktop\\project\\Selenium_Java_Project_Batch_Nov2025_9PM\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
+		FileInputStream file = new FileInputStream("C:\\Users\\lenovo\\eclipse-workspace\\Nov2025\\Selenium_Java_Project_Batch_Nov2025_9PM\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
 	    prop.load(file);//changed config file location
 	
 	}
@@ -33,7 +33,8 @@ public class TesBase {
 		case "firefox": driver =  new FirefoxDriver();
 		break;
 		default:
-			System.out.println("please check your browser name ...!");
+			
+			System.out.println("change the browser, if it is not working");
 			break;
 			
 		}
@@ -41,12 +42,12 @@ public class TesBase {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get(prop.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
 				
 	}
 	
 	public static void Hold() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 }
