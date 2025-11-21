@@ -14,10 +14,11 @@ public class TesBase {
 	public static Properties prop;
 	 public static WebDriver driver;
 	
-	 public TesBase() throws IOException{
+	    public TesBase() throws IOException{
 		 prop = new Properties();
-		FileInputStream file = new FileInputStream("C:\\Users\\lenovo\\eclipse-workspace\\Nov2025\\Selenium_Java_Project_Batch_Nov2025_9PM\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
-	    prop.load(file);//changed config file location
+//		FileInputStream file = new FileInputStream("C:\\Users\\lenovo\\eclipse-workspace\\Nov2025\\Selenium_Java_Project_Batch_Nov2025_9PM\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
+	    FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\com\\jala\\qa\\EnviromentalLayer\\config.properties");
+		 prop.load(file);//changed config file location
 	
 	}
 	

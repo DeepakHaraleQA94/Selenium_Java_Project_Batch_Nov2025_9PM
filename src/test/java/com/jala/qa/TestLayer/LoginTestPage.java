@@ -6,13 +6,13 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.jala.qa.ParentLayer.TesBase;
+import com.qa.jala.utility.utility;
 
 import POMLayer.LoginPage;
-
-
 
 
 public class LoginTestPage extends TesBase{
@@ -28,17 +28,23 @@ public class LoginTestPage extends TesBase{
 		
 	}
 	
-//	@Test(dependsOnMethods = "validateLoginPage")
+//	@Test
 //	public void add() {
-//		System.out.println("hi");
+//		System.out.println(System.getProperty("user.dir"));
 //	}
+//	
+	@DataProvider
+	public Object[][] addData() throws IOException {
+		utility util = new utility();
+		 Object[][] data1 = util.getDataFromExcel();
+		 return data1;
+	}
 	
-	
-	@Test
-	public void validateLoginPage() throws IOException, InterruptedException {
+	@Test(dataProvider = "addData")
+	public void validateLoginPage(String uname, String pass) throws IOException, InterruptedException {
 		 login = new LoginPage();
-		 login.enterUname(prop.getProperty("Uname"));
-		 login.enterPass(prop.getProperty("Pass"));
+		 login.enterUname(uname);
+		 login.enterPass(pass);
 		 login.clickOnLoginBtn();
 		 Thread.sleep(3000);
 		 String actual = driver.getTitle();
