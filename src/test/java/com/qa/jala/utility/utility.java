@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
+import org.apache.poi.ss.usermodel.DataFormatter;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -68,9 +69,36 @@ public static ExtentReports getExtentReport() {
 	   return data;
 	   
    }
-   
-   
-   
 
+   public Object[][] getEmployeeDataFromExcel() throws IOException {
+   String path = System.getProperty("user.dir") + "\\src\\main\\java\\com\\jala\\qa\\DataLayer\\mybook.xlsx";
+   
+   FileInputStream file = new FileInputStream(path);
+   XSSFWorkbook action = new XSSFWorkbook(file);
+   
+   XSSFSheet sheetname = action.getSheet("EmployeeData"); 
+   
+   int rowCount = sheetname.getPhysicalNumberOfRows(); 
+   int colCount = sheetname.getRow(0).getLastCellNum(); 
+   
+   // Initialize the 2D array: (rowCount - 1) to exclude the header, colCount for columns
+   Object data[][] = new Object[rowCount - 1][colCount];
+   
+   DataFormatter formatter = new DataFormatter();
+   // Loop through rows: start from i=1 to skip the header row
+   for (int i = 1; i < rowCount; i++) {
+       
+       // Loop through columns: start from j=0
+       for (int j = 0; j < colCount; j++) {
+           
+           // Get the cell value, format it as a String, and store it.
+           // We use (i - 1) for the array index to start storing data from data[0][j]
+    	   data[i - 1][j] = formatter.formatCellValue(sheetname.getRow(i).getCell(j));
+       }
+   }
+   
+   action.close(); // Close workbook
+   file.close();   // Close file stream
 
-}
+   return data;
+}}
