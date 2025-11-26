@@ -46,7 +46,7 @@ public class HomePage  extends TesBase{
 	@FindBy(linkText = "Tooltips")
 	WebElement  TooltipsLink;
 	
-	@FindBy(linkText = " Popups ")
+	@FindBy(xpath="//a[contains(text(),'Popups')]")
 	WebElement  PopupsLink;
 	
 	@FindBy(linkText = " Links ")
@@ -131,6 +131,9 @@ public class HomePage  extends TesBase{
 	public void SettingsLink() {
 		SettingsLink.click();
 	}
+
+	
+	
 	
 
 }
