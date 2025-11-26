@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import POMLayer.LoginPage;
+
 public class TesBase {
 	public static Properties prop;
 	 public static WebDriver driver;
@@ -46,6 +48,19 @@ public class TesBase {
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
 				
 	}
+	
+	// ------------------------------------
+    // REUSABLE LOGIN METHOD 
+    // ------------------------------------
+    public void loginToApplication() throws Exception {
+        LoginPage login = new LoginPage();
+
+        login.enterUname(prop.getProperty("Uname"));
+        login.enterPass(prop.getProperty("Pass"));
+        login.clickOnLoginBtn();
+
+        Thread.sleep(2000);
+    }
 	
 	public static void Hold() throws InterruptedException {
 		Thread.sleep(2000);

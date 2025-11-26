@@ -17,11 +17,13 @@ import com.qa.jala.utility.utility;
 
 import POMLayer.LoginPage;
 import POMLayer.CreateEmployeePage;
+import POMLayer.HomePage;
 @Listeners(listenr.class)
 public class EmployeeCreateTestPage extends TesBase {
 
     LoginPage login;
     CreateEmployeePage createEmp;
+    
 
     public EmployeeCreateTestPage() throws IOException {
         super();
@@ -29,14 +31,12 @@ public class EmployeeCreateTestPage extends TesBase {
 
     @BeforeMethod
     public void setUp() throws Exception {
-        Intilization();   
-        login = new LoginPage();
+        Intilization(); 
+        
+        loginToApplication();
+        
 
-        // LOGIN FIRST
-        login.enterUname(prop.getProperty("Uname"));
-        login.enterPass(prop.getProperty("Pass"));
-        login.clickOnLoginBtn();
-        Thread.sleep(3000);
+        
 
         // Navigate to Create Page
         driver.get("https://magnus.jalatechnologies.com/Employee/Create");
