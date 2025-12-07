@@ -48,6 +48,7 @@ public class LoginTestPage extends TesBase{
 		 login.clickOnLoginBtn();
 		 Thread.sleep(3000);
 		 String actual = driver.getTitle();
+		 System.out.println("hello check");
 		Assert.assertEquals(actual, "Magnus", "Home page title not matched, TC failed");
 		Assert.assertEquals(actual, "Magnus", "Home page title matched, TC passed");
 		Reporter.log("Home page title matched, TC Passed", true);
