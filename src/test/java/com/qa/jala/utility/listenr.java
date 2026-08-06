@@ -46,10 +46,21 @@ public class listenr extends TesBase implements ITestListener {
 	  
 	  public void onTestSuccess(ITestResult result) {
 		    System.out.println(" TC method passed" + result.getMethod().getMethodName());
+		    String testName = result.getName();
+			eTest = report.createTest(testName);
+		    
+			eTest.log(Status.PASS,testName+" TC Passed");
+			eTest.log(Status.INFO,result.getThrowable());			
 		  }
 	
 	  public void onTestFailure(ITestResult result) {
 		    System.out.println("TC method validation Failed "+ result.getMethod().getMethodName() );
+		    String testName = result.getName();
+		 			eTest = report.createTest(testName);
+		 		    
+		 			eTest.log(Status.FAIL,testName+" TC Failed");
+		 			eTest.log(Status.INFO,result.getThrowable());
+		    
 		    try {
 				util = new utility();
 			} catch (IOException e) {
@@ -57,7 +68,7 @@ public class listenr extends TesBase implements ITestListener {
 				e.printStackTrace();
 			}
 		   try {
-			util.screenshot();
+			util.screenshot(testName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,6 +79,12 @@ public class listenr extends TesBase implements ITestListener {
 	  
 	  public void onTestSkipped(ITestResult result) {
 		    System.out.println("TC method skipped " + result.getMethod().getMethodName() );
+		    
+		    String testName = result.getName();
+		 			eTest = report.createTest(testName);
+		 		    
+		 			eTest.log(Status.SKIP,testName+" TC Skipped");
+		 			eTest.log(Status.INFO,result.getThrowable());
 		  }
 
 	  

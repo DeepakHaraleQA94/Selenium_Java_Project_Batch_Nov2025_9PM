@@ -16,6 +16,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.jala.qa.ParentLayer.TesBase;
 
+import net.bytebuddy.utility.RandomString;
+
 public class utility extends TesBase {
 
 	
@@ -42,10 +44,11 @@ public static ExtentReports getExtentReport() {
 
 //########################### screnshot #####################################
 
-   public void screenshot() throws IOException {
+   public void screenshot(String MethodName) throws IOException {
 	
 	      File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	      File Destination = new File(System.getProperty("user.dir" )+"\\screenshot\\img1.png");
+	      String random = RandomString.make(2);
+	      File Destination = new File(System.getProperty("user.dir" )+"\\screenshot\\"+MethodName+random+".png");
           FileHandler.copy(source, Destination);
    
    }
